@@ -1,0 +1,85 @@
+.landing
+	width: 100%
+	min-height: 100%
+	background: black
+	display: flex
+	flex-direction: column
+	position: relative
+	>img 
+		position: fixed
+		width: 100%
+		margin: auto
+	>.landing-line
+		position: relative
+		margin: 5px auto
+		width: 80%
+		height: 30px
+		>img
+			position: absolute
+			&:nth-child(1)
+				width: 100%
+				height: 10px
+				top: 10px
+			&:nth-child(2)
+				width: 40px
+				height: 30px
+				left: 50%
+				transform: translateX(-50%)
+	>.section-1
+		position: relative
+		width: 80%
+		height: 500px
+		margin: 100px auto 20px
+		>h1
+			color: #010206
+			font-family: PassionOne-Bold
+			font-size: 100px
+			text-shadow: 0 0 40px #c78025
+			margin: auto
+		>p
+			color: #427c9e
+			font-size: 30px
+			text-align: center
+			margin-top: 160px
+			font-family: Ubuntu-Bold
+			background: rgba(13,15,21,.5)
+	>.section-2
+		position: relative
+		width: 80%
+		margin: 20px auto
+		display: flex
+		flex-direction: column
+		>p
+			color: #427c9e
+			font-size: 40px
+			text-align: center
+			margin: 40px 0
+			padding: 20px 0
+			font-family: Ubuntu-Bold
+			background: rgba(13,15,21,.8)
+		>.section-2-ship
+			width: 100%
+			height: 100%
+			background: rgba(13,15,21,.8)
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-around
+			vertical-align: center
+			>.ship-card
+				width: 400px
+				height: 300px
+				display: flex
+				margin: 30px auto
+				border: 1px solid #5c0902
+				box-shadow: 0 0 5px red
+				background: rgba(0,0,0,.3)
+				&:hover
+					background: rgba(0,0,0,.5)
+					>img
+						transform: scale(1.2)
+				>img
+					width: 100%
+					margin: auto
+
+	
+

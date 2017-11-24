@@ -1,0 +1,34 @@
+@font-face {
+	font-family: AbrilFatface-Regular;
+	src: url('../fonts/AbrilFatface-Regular.ttf');
+}
+
+@font-face {
+	font-family: PassionOne-Black;
+	src: url('../fonts/PassionOne-Black.ttf');
+}
+
+@font-face {
+	font-family: PassionOne-Bold;
+	src: url('../fonts/PassionOne-Bold.ttf');
+}
+
+@font-face {
+	font-family: PassionOne-Regular;
+	src: url('../fonts/PassionOne-Regular.ttf');
+}
+
+@font-face {
+	font-family: Ubuntu-Regular;
+	src: url('../fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+	font-family: Ubuntu-Medium;
+	src: url('../fonts/Ubuntu-Medium.ttf');
+}
+
+@font-face {
+	font-family: Ubuntu-Bold;
+	src: url('../fonts/Ubuntu-Bold.ttf');
+}
