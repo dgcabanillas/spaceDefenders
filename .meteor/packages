@@ -19,12 +19,22 @@ shell-server@0.2.4            # Server-side component of the `meteor shell` comm
 
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+
+streemo:reactive-date
+streemo:meteor-react-state-tree
+
 fortawesome:fontawesome
 react-meteor-data
 fourseven:scss
 ultimatejs:tracker-react
-
 cfs:standard-packages
 cfs:filesystem
 twbs:bootstrap
 jquery
+
+accounts-ui
+accounts-password
+accounts-facebook
+accounts-twitter
+service-configuration
+facebook-config-ui
