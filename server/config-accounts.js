@@ -39,12 +39,13 @@ Accounts.onCreateUser(function(options,user){
         profilePicture: "../../../../../../img/default_img.png",
         status:"offline",
         funds: 10,
+        money: 0,
         friends: {
             friendSends: [],
             friendRequests: [],
             friends: [],
         },
-        spacerafts: {},
+        spacecrafts: {},
         matches: {
             wins: [],
             loses: []
