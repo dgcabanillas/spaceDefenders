@@ -1,0 +1,160 @@
+.homeTopBar
+	width: 100%
+	display: inline-flex
+	flex-wrap: wrap
+	box-sizing: border-box !important
+	background: #775a2d
+	position: fixed
+	z-index: 1000
+	top: 0
+	box-shadow: 0px 4px 3.7px 0.3px rgba(0, 0, 0, 0.35)
+	.menu
+		width: 20% !important
+		height: 50px
+		background: 
+		display: flex
+		background-size: cover
+		position: relative
+		.bt-menu
+			text-align: center
+			height: 50px
+			display: flex
+			line-height: 50px
+			color: white
+			margin: auto
+			padding: 0 20px
+			img
+				height: 40px
+				margin-top: 5px
+				margin-right: 5px
+			i
+				line-height: 50px
+				font-size: 17px
+			&:hover
+				cursor: pointer
+	.content_list
+		width: 50%
+		height: 50px
+		ul
+			width: 100%
+			margin: auto
+			box-sizing: border-box
+			box-shadow: none !important
+			height: 50px
+			display: flex
+			li
+				width: 25%
+				height: 100%
+				line-height: 50px
+				text-align: center
+				p
+					color: white
+					width: 80%
+					margin: 0 auto
+					font-size: 14px
+					font-weight: bold
+					font-family: Montserrat
+					padding-left: 0
+
+	.data_list
+		width: 30% !important
+		height: 50px
+		display: flex
+		padding-left: 20px
+		.bt-menu
+			font-weight: bold
+			text-align: center
+			height: 50px
+			display: flex
+			line-height: 50px
+			color: white
+			margin: auto
+			padding: 0 20px
+			overflow: hidden !important
+			img
+				height: 40px
+				margin-right: 10px
+				margin-top: 5px 
+				border-radius: 50%
+			i
+				line-height: 50px
+				font-size: 15px
+				margin-right: 10px
+			&:hover
+				color: #F08F01
+				cursor: pointer
+
+#leftmenu-pc
+	position: fixed
+	z-index: 999
+	width: 200px
+	height: 100%
+	left: -100%
+	transition: 1s
+	padding-top: 70px
+	background: rgba(25,36,45,0.4)
+	&.active
+		left: 0
+		transition: .5s
+	ul
+		width: 100%
+		height: auto
+		box-shadow: none
+		li
+			width: 100%
+			height: 30px
+		&.final
+			position: absolute
+			bottom: 5px
+
+.button
+	position: relative
+	box-sizing: border-box
+	width: 100%
+	height: 100%
+	>button
+		width: 100%
+		height: 100%
+		background: none
+		position: absolute
+		display: flex
+		border: none
+		border: 1px solid transparent
+		>.buttonIcon
+			display: flex
+			width: 20px
+			height: 100%
+		>.buttonText
+			line-height: 100%
+			font-size: 14px
+			padding-left: 20px
+	>div
+		position: absolute
+		width: 0
+		height: 0
+		transition: .1s
+		&.target1
+			top: 0
+			left: 0
+		&.target2
+			right: 0
+			bottom: 0
+	&.active,&:hover
+		cursor: pointer
+		>button
+			>.buttonText
+				font-weight: bold
+				color: #010206
+				text-shadow: 0 0 5px white
+		>div
+			&.active
+				width: 100%
+				height: 100%
+				transition: .5s
+				background: rgba(199,128,37,.2)
+			&.active.target1
+				border-top: 2px solid #010206
+				border-left: 2px solid #010206
+			&.active.target2
+				border-bottom: 2px solid #010206
+				border-right: 2px solid #010206

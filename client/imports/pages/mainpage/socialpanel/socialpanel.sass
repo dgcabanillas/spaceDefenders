@@ -1,0 +1,200 @@
+#social-panel
+	width: 200px
+	height: 100%
+	position: fixed
+	background: rgba(25,36,45,0.4)
+	padding: 20px 10px
+	padding-top: 70px
+	z-index: 998
+	overflow: hidden
+	transition: .2s
+	right: 0
+	>button
+		position: absolute
+		top: 50px
+		height: 16px
+		width: 210px
+		background: none
+		border: none
+		color: white
+		text-shadow: 0 0 5px black
+		font-size: 10px
+		text-align: right
+		padding-right: 10px
+		>span
+			font-size: 8px
+			margin-left: 10px
+		&:hover
+			color: #F08F01
+	&.close
+		width: 120px
+		padding: 70px 5px 0
+		height: 70px
+		transition: .2s
+		>button
+			width: 110px
+
+.search-panel
+	position: relative
+	width: 100%
+	height: 100%
+	overflow: hidden
+	padding-top: 64px
+	.search
+		position: absolute
+		width: 100%
+		height: 60px
+		top: 0
+		display: flex
+		flex-direction: column
+		>button
+			border: none
+			background: transparent
+			width: 100%
+			height: 20px
+			color: white
+			font-weight: bold
+			font-family: PierSans
+			font-size: 12px
+			display: flex
+			justify-content: space-between
+			&:hover
+				text-shadow: 0 0 10px #438cdc
+		>input
+			border: none
+			width: 100%
+			height: 20px
+			margin-top: 10px
+			background: white
+			padding: 0 5px
+			font-size: 14px
+			font-weight: bold
+			box-sizing: border-box
+			&:focus
+				border: none
+				box-shadow: 0 0 5px #438cdc
+	.result
+		position: relative
+		height: 100%
+		overflow: auto
+.user-link
+	width: 100%
+	height: 85px
+	background: rgba(0,0,0,.4)
+	margin: 5px 0
+	display: flex
+	flex-direction: column
+	padding: 5px
+	>div
+		width: 100%
+		height: 55px
+		display: flex
+		>img
+			width: 50px
+			height: 50px
+			background: black
+		>div
+			width: 140px
+			>p
+				width: 100%
+				font-size: 11px
+				line-height: 24px
+				color: white
+				font-weight: bold
+				margin-left: 5px
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+	>button
+		width: 100%
+		height: 20px
+		border: none
+		background: rgba(0,0,0,.5)
+		color: white
+		font-size: 12px
+		&:hover
+			text-shadow: 0 0 5px white
+
+
+.friends-panel
+	position: relative
+	width: 100%
+	height: 100%
+	padding-top: 24px
+	.aux-button
+		position: absolute
+		width: 100%
+		height: 14px
+		top: 0
+		display: flex
+		flex-direction: column
+		>button
+			border: none
+			background: transparent
+			width: 100%
+			height: 20px
+			color: white
+			font-weight: bold
+			font-family: PierSans
+			font-size: 12px
+			display: flex
+			justify-content: space-between
+			&:hover
+				text-shadow: 0 0 10px #438cdc
+	#list-friends-online,#list-friends-offline
+		>button
+			display: flex
+			width: 200px
+			transform: translateX(-10px)
+			background: #054264
+			border: none
+			color: white
+			height: 25px
+			font-size: 11px
+			padding-left: 30px
+			font-family: PierSans
+			letter-spacing: .6px
+			>span
+				width: 8px
+				margin: 0 10px
+			>p
+				margin: 0 10px
+		.chat-user-status
+			display: flex
+			height: 40px
+			>div
+				position: relative
+				&:nth-of-type(1)
+					width: 50px
+					>img
+						position: absolute
+						width: 36px
+						height: 36px
+						border-radius: 50%
+						top: 2px
+						left: 2px
+					>span
+						position: absolute
+						bottom: 0
+						line-height: 18px
+						font-size: 16px
+						right: 10px
+				&:nth-of-type(2)
+					display: flex
+					flex-direction: column
+					justify-content: center
+					>p
+						font-weight: bold
+						letter-spacing: .5px
+						&:nth-of-type(1)
+							font-size: 12px
+							line-height: 14px
+							color: white
+						&:nth-of-type(2)
+							font-size: 10px
+							line-height: 12px
+			&:hover
+				cursor: pointer
+				background: rgba(0,0,0,.5)
+
+

@@ -3,6 +3,7 @@ import StateTree from "meteor/streemo:meteor-react-state-tree";
 
 
 const State = new StateTree({
+	chat:  { status: "close", contact: "",chatID: "" },
 	form:  { status: "close" }
 })
 

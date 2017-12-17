@@ -17,11 +17,14 @@ es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers
 ecmascript@0.8.3              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.4            # Server-side component of the `meteor shell` command
 
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
-insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
-
-streemo:reactive-date
+streemo:record
 streemo:meteor-react-state-tree
+streemo:create-user-fast
+streemo:automatic-service-configuration
+streemo:user-security
+streemo:fb-user-graph
+streemo:reactive-date
+streemo:matchmaker
 
 fortawesome:fontawesome
 react-meteor-data
@@ -29,8 +32,7 @@ fourseven:scss
 ultimatejs:tracker-react
 cfs:standard-packages
 cfs:filesystem
-twbs:bootstrap
-jquery
+materialize:materialize
 
 accounts-ui
 accounts-password

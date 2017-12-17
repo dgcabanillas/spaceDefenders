@@ -7,7 +7,7 @@ export default class Section2 extends Component{
 	render(){
 		return(
 			<div className="section-2">
-				<p> Choose your ship </p>
+				<p> Choose your spacecraft </p>
 				<div className="section-2-ship">
 					<div className="ship-card">
 						<img src={path + "nave1.png"} alt="ship" />

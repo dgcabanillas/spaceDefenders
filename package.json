@@ -17,6 +17,9 @@
     "react-router": "^2.7.0",
     "react-tap-event-plugin": "^2.0.1",
     "react-wrap-children": "^1.0.2",
-    "sass": "^0.5.0"
+    "sass": "^0.5.0",
+    "iconate": "^0.2.7",
+    "jquery": "^3.2.1",
+    "animate.css": "^3.5.2"
   }
 }
