@@ -24,7 +24,7 @@ class Home extends Component{
 			Meteor.setTimeout(()=>{
 				const user = this.props.user;
 				const data = {
-					userId: user._id,
+					_id: user._id,
 					field: "status",
 					value: "online"
 				}

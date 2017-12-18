@@ -37,10 +37,26 @@ export default class Play extends Component{
 			}
 		})
 	}
-	gotoLobby(e){
-		e.preventDefault();
-		let win = window.open("http://google.com","_blank");
+	acceptMatch() {
+		const data = {
+			_id: Meteor.userId(),
+			field: "status",
+			value: "playing"
+		}
+		Meteor.call('updateState',data,(err)=>{
+			if(err) {
+				alert(err.error);
+			}
+		})
+		let win = window.open("http://localhost:2000","_blank");
 		win.focus();
+	}
+	findMatch(){
+		Meteor.call('findMatch',{_id: Meteor.userId() },(err)=>{
+			if(err) {
+				alert(err.error);
+			}
+		})
 	}
 	_renderButton() {
 		const user = Meteor.user();
@@ -50,21 +66,21 @@ export default class Play extends Component{
 			)
 		} else if( user && user.status ){
 			const s = user.status;
-			if( s.status == "online" ){
+			if( s == "online" ){
 				return (
-					<button onClick={ this.updateState.bind(this,"finding")}> FIND MATCH </button>
+					<button onClick={ this.findMatch.bind(this)} className="btn-find-match"> FIND MATCH </button>
 				)
-			} else if ( s.status == "finding" ) {
+			} else if ( s == "finding" ) {
 				return (
-					<button onClick={ this.updateState.bind(this,"online")}> CANCEL </button>
+					<button onClick={ this.updateState.bind(this,"online")} className="btn-cancel"> CANCEL </button>
 				)
-			} else if ( s.status == "found" ) {
+			} else if ( s == "found" ) {
 				return (
-					<button onClick={ this.updateState.bind(this,"playing") }> ACCEPT </button>
+					<button onClick={ this.acceptMatch.bind(this,"playing") } className="btn-accept"> ACCEPT </button>
 				)
 			} else {
 				return (
-					<button onClick={ this.gotoLobby.bind(this)}> PLAYING </button>
+					<button className="btn-playing"> PLAYING </button>
 				)
 			}
 		}
