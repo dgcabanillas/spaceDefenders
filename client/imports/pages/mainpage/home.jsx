@@ -40,30 +40,31 @@ class Home extends Component{
 		const p = this.props;
 		if(p.chat.status == "open") return (<SocialChat />);
 	}
-	_renderTopMenu(){
-		const p = this.props;
-		return ( <HomeTopBar user={p.user}/> );
+	_renderTopMenu(user){
+		return ( <HomeTopBar user={user}/> );
 	}
-	_renderLeftMenu(){
+	_renderLeftMenu(user){
 		const p = this.props;
-		return ( <SideBarLeft user={p.user}/> );
+		return ( <SideBarLeft user={user}/> );
 	}
-	_renderSocialPanel(){
-		const p = this.props;
-		return ( <SocialPanel user={p.user}/> );
+	_renderSocialPanel(user){
+		return ( <SocialPanel user={user}/> );
 	}
-	_renderPropsChildren(){
-		const p = this.props;
-		return wrap(this.props.children, {user: p.user}) ;
+	_renderPropsChildren(user){
+		return wrap(this.props.children, {user: user}) ;
 	}
 	render(){
+		const user = this.props.user;
+		if( user && !user.spacecrafts ){
+			return ( <p>cargando ..</p> )
+		}
 		return(
 			<div className="home">
-				{ this._renderTopMenu() } 
-				{ this._renderLeftMenu() }
-				{ this._renderSocialPanel() }
-				{ this._renderChat() }
-				{ this._renderPropsChildren() }
+				{ this._renderTopMenu(user) } 
+				{ this._renderLeftMenu(user) }
+				{ this._renderSocialPanel(user) }
+				{ this._renderChat(user) }
+				{ this._renderPropsChildren(user) }
 			</div>
 		);
 	}

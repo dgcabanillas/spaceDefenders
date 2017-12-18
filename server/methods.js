@@ -1,5 +1,6 @@
 import { Meteor } from "meteor/meteor";
-
+import { Matches , Queue } from '/lib/database.js';
+import { Random } from "meteor/random";
 
 const opts = {
     debug: true,
@@ -84,5 +85,42 @@ Meteor.trackedMethods( opts ,{
                 throw new Meteor.Error("Something went wrong.");
             }
         }
-    }
+    },
+    findMatch(record, data){
+        let user = Meteor.users.findOne({'_id':data._id});
+        if( !user ){
+            throw new Meteor.Error("Please login first.");
+        } else if( user.status == "online" ) {
+            try {
+                Meteor.users.update({_id: user._id},{$set: {status: "finding"}});
+                Mateor.call('enterQueue');
+            } catch(err) {
+                throw new Meteor.Error("Something went wrong.");
+            }
+        } else {
+            throw new Meteor.Error("You can't find a game.");
+        }
+    },
+    leaveQueue(record, data){
+        try {
+            Meteor.users.update({_id: user._id},{$set: {status: "online"}})
+        } catch (err) {
+            throw new Meteor.Error("Something went wrong.");
+        }
+    },
+    enterQueue(){
+        let u = Meteor.users.find({status:"finding"},{fields: {_id:1,status:1}}).fetch();
+        console.log(u)
+        let lobbyId;
+        if(u.length != 0 && u.length % 2 == 0){
+            lobbyId = Random.id();
+            Meteor.users.update({_id: u[0]._id},{$set: {status: "playing"}});
+            Meteor.users.update({_id: u[1]._id},{$set: {status: "playing"}});
+            Matches.insert({
+                path: lobbyId,
+                player1: u[0]._id,
+                player2: u[1]._id
+            });
+        }
+    },
 });
